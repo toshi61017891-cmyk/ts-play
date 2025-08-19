@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "env:check": "tsx ./env.ts",
     "format:check": "prettier -c .",
     "format": "prettier -w .",
@@ -11,6 +12,7 @@
     "fix": "eslint --ext .ts,.tsx --fix"
   },
   "devDependencies": {
+    "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.1",
     "dotenv": "^16.4.5",

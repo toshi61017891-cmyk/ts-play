@@ -26,3 +26,14 @@ jobs:
       - uses: pnpm/action-setup@v4 # ← 同じく version指定は削除
       - run: pnpm install --frozen-lockfile
       - run: pnpm run format:check
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0' # Volta と合わせる
+      - uses: pnpm/action-setup@v4 # version指定しない→ package.json の packageManager(pnpm@10.4.0)を使用
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
