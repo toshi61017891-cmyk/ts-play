@@ -1,7 +1,14 @@
-# TS Play
+# ts-play
 
-[![CI](https://github.com/toshi61017891-cmyk/ts-play/actions/workflows/ci.yml/badge.svg)](https://github.com/toshi61017891-cmyk/ts-play/actions/workflows/ci.yml)
+## 開発に必要なもの
 
-# 空行を1つ足すだけ等でOK
+- Node.js 22.x（Volta で自動）
+- pnpm 10.4.0（packageManager に固定）
 
-- chore: small update
+## よく使うコマンド
+
+- `pnpm dev` : tsx で index.ts を実行（監視）
+- `pnpm lint` : ESLint チェック
+- `pnpm format` : Prettier 整形
+- `pnpm typecheck` : tsc --noEmit（型チェック）
+- `pnpm env:check` : Zod で .env 検証
