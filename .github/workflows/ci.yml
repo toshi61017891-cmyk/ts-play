@@ -9,15 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.18.0' # Voltaのpinと合わせる
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0' # packageManagerと合わせる
-
+          node-version: '22.18.0' # Voltaと合わせる
+      - uses: pnpm/action-setup@v4 # ← version指定はしない（package.jsonのpackageManagerを使用）
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
 
@@ -25,14 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
-
+      - uses: pnpm/action-setup@v4 # ← 同じく version指定は削除
       - run: pnpm install --frozen-lockfile
       - run: pnpm run format:check
