@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "env:check": "tsx ./env.ts",
     "format:check": "prettier -c .",
     "format": "prettier -w .",
