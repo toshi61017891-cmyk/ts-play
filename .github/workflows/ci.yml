@@ -12,12 +12,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.18.0' # Voltaでpinしたバージョンに合わせる
-          cache: 'pnpm'
+          node-version: '22.18.0' # Voltaのpinと合わせる
 
       - uses: pnpm/action-setup@v4
         with:
-          version: '10.4.0' # packageManager と合わせる
+          version: '10.4.0' # packageManagerと合わせる
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
@@ -30,7 +29,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
-          cache: 'pnpm'
 
       - uses: pnpm/action-setup@v4
         with:
